@@ -10,8 +10,12 @@
         <div class="product-details">
           <h3>{{ product.name }}</h3>
           <p>{{ product.description }}</p>
-          <p>{{ product.price | currency }}</p>
-          <button (click)="removeFromCart(i)" class="remove-button">Remove</button>
+          <p>{{ product.price }}</p>
+          <div class="button-container">
+            <button (click)="removeFromCart(i)" class="remove-button">Remove</button>
+            <button (click)="buyNow(product)" class="buy-button">Buy Now</button>
+          </div>
+          
         </div>
       </li>
     </ul>
