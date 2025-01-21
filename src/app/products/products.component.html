@@ -1,5 +1,18 @@
 <div class="products-container">
   <h2>Product List</h2>
+  
+  <!-- Search Product Form -->
+  <div class="search-product-form">
+    <input
+      type="text"
+      placeholder="Search Product by Name"
+      [(ngModel)]="searchQuery"
+      class="form-input"
+    />
+    <button (click)="onSearch()" class="search-button">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
 
   <!-- Add Product Form with Image URL Input -->
   <div class="add-product-form">
@@ -7,32 +20,38 @@
       type="text"
       placeholder="Product Name"
       [(ngModel)]="newProduct.name"
+      class="form-input"
     />
     <input
       type="text"
       placeholder="Product Description"
       [(ngModel)]="newProduct.description"
+      class="form-input"
     />
     <input
       type="number"
       placeholder="Product Price"
       [(ngModel)]="newProduct.price"
+      class="form-input"
     />
     <input
       type="text"
       placeholder="Product Image URL"
       [(ngModel)]="newProduct.imageUrl"
+      class="form-input"
     />
     <!-- Add Product Button -->
-    <button (click)="addProduct()">Add Product</button>
-  </div>
+    <button (click)="addProduct()" class="add-product-button">Add Product</button>
 
-  <!-- Display Product List -->
+  </div>
+  
+  <!-- Display Filtered Product List -->
   <div class="products-list">
     <app-product-item
-      *ngFor="let product of products; index as i"
+      *ngFor="let product of filteredProducts"
       [product]="product"
-      (delete)="deleteProduct(i)"
+      (delete)="deleteProduct(products.indexOf(product))"
+      class="product-item"
     ></app-product-item>
   </div>
 </div>

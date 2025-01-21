@@ -64,6 +64,48 @@ ng-template p {
   color: #007acc;
 }
 
+/* Search form styles */
+.search-product-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-product-form .form-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.search-product-form .form-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-product-form .search-button {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  border-left: none;
+  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.search-product-form .search-button:hover {
+  background-color: #0056b3;
+}
+
+.search-product-form .search-button i {
+  margin-right: 5px;
+}
+
 /* Add product form styles */
 .add-product-form {
   display: grid;
@@ -116,4 +158,54 @@ app-product-item {
 app-product-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Product item internal styles */
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 150px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures image covers the space without distortion */
+}
+
+.product-item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.product-item p {
+  font-size: 14px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.product-item .price {
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.product-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.product-item button:hover {
+  background-color: #c82333;
 }

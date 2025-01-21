@@ -13,8 +13,8 @@ export interface Product {
 })
 export class ProductsService {
   private products: Product[] = [
-    { name: 'Laptop', description: 'A powerful laptop', price: 1000 },
-    { name: 'Smartphone', description: 'A modern smartphone', price: 700 },
+    { name: 'Laptop', description: 'A powerful laptop', price: 1000, imageUrl:"https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxzZWFyY2h8Mnx8Y29kaW5nfHwwfHx8&ixlib=rb-1.2.1&q=80&w=1080" },
+    { name: 'Smartphone', description: 'A modern smartphone', price: 700, imageUrl:"https://tse1.mm.bing.net/th?id=OIP.U1TqELvCg1qB7OaBwBwoRwHaEU&pid=Api&P=0&h=220" },
   ];
 
   private cart: Product[] = [];
