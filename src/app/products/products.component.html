@@ -1,6 +1,6 @@
+<!-- src/app/products/products.component.html -->
+
 <div class="products-container">
-  <h2>Product List</h2>
-  
   <!-- Search Product Form -->
   <div class="search-product-form">
     <input
@@ -14,8 +14,12 @@
     </button>
   </div>
 
+  <div class="hide">
+      <a routerLink="#" (click)="toggleAddForm(); $event.preventDefault()"><h2>Click Here To Add Your Product</h2></a>
+  </div>
+
   <!-- Add Product Form with Image URL Input -->
-  <div class="add-product-form">
+  <div *ngIf="showAddForm" class="add-product-form">
     <input
       type="text"
       placeholder="Product Name"
@@ -42,9 +46,8 @@
     />
     <!-- Add Product Button -->
     <button (click)="addProduct()" class="add-product-button">Add Product</button>
-
   </div>
-  
+
   <!-- Display Filtered Product List -->
   <div class="products-list">
     <app-product-item

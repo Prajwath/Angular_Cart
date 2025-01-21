@@ -35,7 +35,7 @@ export class ProductsService {
       name: 'Camera',
       description: 'Professional DSLR camera',
       price: 800,
-      imageUrl: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FtZXJhfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
+      imageUrl: 'https://tse3.mm.bing.net/th?id=OIP.SL7Mf-GkhsD_fnG12DDZewHaE8&pid=Api&P=0&h=220'
     },
     {
       name: 'Console',

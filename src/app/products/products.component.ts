@@ -1,5 +1,8 @@
+// src/app/products/products.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { ProductsService, Product } from '../services/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -13,13 +16,14 @@ export class ProductsComponent implements OnInit {
     name: '',
     description: '',
     price: 0,
-    imageUrl: '' // Assuming you have an imageUrl property in your Product interface
+    imageUrl: ''
   };
   searchQuery: string = '';
+  showAddForm: boolean = false; // New boolean flag to control form visibility
 
   constructor(private productsService: ProductsService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.products = this.productsService.getProducts();
     this.filteredProducts = [...this.products]; // Initialize filteredProducts with all products
   }
@@ -34,6 +38,7 @@ export class ProductsComponent implements OnInit {
       this.products = this.productsService.getProducts();
       this.filteredProducts = [...this.products]; // Update filteredProducts after adding a new product
       this.resetNewProduct();
+      this.showAddForm = false; // Hide the form after adding the product
     } else {
       alert('Please fill in all fields with valid values.');
     }
@@ -57,5 +62,9 @@ export class ProductsComponent implements OnInit {
         product.name.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     }
+  }
+
+  toggleAddForm(): void {
+    this.showAddForm = !this.showAddForm;
   }
 }

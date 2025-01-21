@@ -9,9 +9,13 @@ header {
   margin-bottom: 20px;
 }
 
-header h1 {
-  font-size: 28px;
-  margin: 0;
+h2:hover {
+  color: #c82333;
+}
+
+.hide{
+  display: flex;
+  align-items: center;
 }
 
 /* Cart icon styles */
@@ -208,4 +212,11 @@ app-product-item:hover {
 
 .product-item button:hover {
   background-color: #c82333;
+}
+
+.hide{
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically if needed */
+    padding: 16px;
 }
