@@ -1,0 +1,38 @@
+<div class="products-container">
+  <h2>Product List</h2>
+
+  <!-- Add Product Form with Image URL Input -->
+  <div class="add-product-form">
+    <input
+      type="text"
+      placeholder="Product Name"
+      [(ngModel)]="newProduct.name"
+    />
+    <input
+      type="text"
+      placeholder="Product Description"
+      [(ngModel)]="newProduct.description"
+    />
+    <input
+      type="number"
+      placeholder="Product Price"
+      [(ngModel)]="newProduct.price"
+    />
+    <input
+      type="text"
+      placeholder="Product Image URL"
+      [(ngModel)]="newProduct.imageUrl"
+    />
+    <!-- Add Product Button -->
+    <button (click)="addProduct()">Add Product</button>
+  </div>
+
+  <!-- Display Product List -->
+  <div class="products-list">
+    <app-product-item
+      *ngFor="let product of products; index as i"
+      [product]="product"
+      (delete)="deleteProduct(i)"
+    ></app-product-item>
+  </div>
+</div>

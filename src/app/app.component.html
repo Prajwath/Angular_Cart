@@ -1,0 +1,12 @@
+<header>
+    <h1>Welcome to Our Store</h1>
+    <a [routerLink]="['/cart']">
+      <div class="cart-icon">
+        <span>🛒</span>
+        <span class="cart-count">{{ cartCount$ | async }}</span>
+      </div>
+    </a>
+  </header>
+  
+  <router-outlet></router-outlet>
+  

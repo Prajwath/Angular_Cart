@@ -1,0 +1,28 @@
+<div>
+  <h1>Products</h1>
+  <ul>
+    <li *ngFor="let product of products; index as i">
+      <a [routerLink]="['/product', i]">{{ product.name }}</a>
+      <button (click)="deleteProduct(i)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Add New Product</h2>
+  <form (ngSubmit)="addProduct()">
+    <label>
+      Name:
+      <input [(ngModel)]="newProduct.name" name="name" />
+    </label>
+    <label>
+      Description:
+      <input [(ngModel)]="newProduct.description" name="description" />
+    </label>
+    <label>
+      Price:
+      <input type="number" [(ngModel)]="newProduct.price" name="price" />
+    </label>
+    <button type="submit">Add Product</button>
+  </form>
+</div>
